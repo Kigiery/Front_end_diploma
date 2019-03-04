@@ -1,0 +1,76 @@
+<div class="container">
+  <form onsubmit="onSubmit()" #documentForm = "ngForm">
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+            <label for="typeOfDocument">Тип:</label>
+            <select class = "form-control" name = "typeOfDocument" #typeOfDocument = "ngModel" ngModel>
+              <option>Атестат</option>
+              <option>Диплом</option>
+              <option>Академ.довідка</option>
+              <option>Інше</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="nameOfDocument">Назва документа:</label>
+          <input class = "form-control" type = "text" name = "nameOfDocument" #nameOfDocument = "ngModel" ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="dateOfApplicaton">Дата подачі:</label>
+          <input class = "form-control" type = "date" name = "dateOfApplicaton" #dateOfApplication = "ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      
+      <div class="col">
+        <div class="form-group">
+            <label for="numberOfDocument">№ документа:</label>
+            <input class = "form-control" type = "text" name = "numberOfDocument" #numberOfDocument = "ngModel" ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="date">Від:</label>
+          <input class = "form-control" type="date" name = "date" #date = "ngModel" ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="countryOfIssue">Країна видачі:</label>
+          <input class = "form-control" type = "text" name = "countryOfIssue" #countryOfIssue = "ngModel" ngModel>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="educationalInstitution">Навчальний заклад:</label>
+          <input class = "form-control" type = "text" name = "educationalInstitution" #educationalInstitution = "ngModel" ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+          <div class="form-group">
+            <label for="numberOfEDBO">№ ЕДБО:</label>
+            <input class = "form-control" type = "text" name = "numberOfEDBO" #numberOfEDBO = "ngModel" ngModel>
+          </div>
+        </div>
+  
+
+    </div>
+  </form>
+</div>
