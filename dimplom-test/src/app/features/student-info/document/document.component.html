@@ -1,0 +1,197 @@
+<div class="container">
+  <form onsubmit="onSubmit()" #documentForm="ngForm">
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="typeOfDocument">Тип:</label>
+          <select class="form-control" name="typeOfDocument" #typeOfDocument="ngModel" ngModel>
+            <option>Атестат</option>
+            <option>Диплом</option>
+            <option>Академ.довідка</option>
+            <option>Інше</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="nameOfDocument">Назва документа:</label>
+          <input class="form-control" type="text" name="nameOfDocument" #nameOfDocument="ngModel" ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="dateOfApplicaton">Дата подачі:</label>
+          <input class="form-control" type="date" name="dateOfApplicaton" #dateOfApplication="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="numberOfDocument">№ документа:</label>
+          <input class="form-control" type="text" name="numberOfDocument" #numberOfDocument="ngModel" ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="dateFrom">Від:</label>
+          <input class="form-control" type="date" name="dateFrom" #dateFrom="ngModel" ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="countryOfIssue">Країна видачі:</label>
+          <input class="form-control" type="text" name="countryOfIssue" #countryOfIssue="ngModel" ngModel>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="educationalInstitution">Навчальний заклад:</label>
+          <input class="form-control" type="text" name="educationalInstitution" #educationalInstitution="ngModel"
+            ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="numberOfEDBO">№ ЕДБО:</label>
+          <input class="form-control" type="text" name="numberOfEDBO" #numberOfEDBO="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="numberOfCertificate">№ свідоцтва:</label>
+          <input class="form-control" type="text" name="numberOfCertificate" #numberOfCertificate="ngModel" ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="dateOfCertificate">Дата:</label>
+          <input class="form-control" type="date" name="dateOfCertificate" #dateOfCertificate="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="issuedBy">Ким виданий:</label>
+          <input class="form-control" type="text" name="issuedBy" #issuedBy="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="note">Примітка:</label>
+          <input class="form-control" type="text" name="note" #note="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="request">Запит:</label>
+          <input class="form-control" type="text" name="request" #request="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="address">Адреса:</label>
+          <input class="form-control" type="text" name="address" #address="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="dateOfDocument">Дата:</label>
+          <input class="form-control" type="date" name="dateOfDocument" #dateOfDocument="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <label><b>Додатковий документ:</b></label>
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="kind">Вид:</label>
+          <input class="form-control" type="text" name="kind" #kind="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="numberOfCertificate1">№ свідоцтва:</label>
+          <input class="form-control" type="text" name="numberOfCertificate1" #numberOfCertificate1="ngModel" ngModel>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="dateOfCertificate1">Дата:</label>
+          <input class="form-control" type="date" name="dateOfCertificate1" #dateOfCertificate1="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label for="issuedBy1">Ким виданий:</label>
+          <input class="form-control" type="text" name="issuedBy1" #issuedBy1="ngModel" ngModel>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-end">
+      <button class="btn btn-success" type="submit">Додати</button>
+      <button class="btn btn-danger" (click) = "close()">Закрити</button>
+    </div>
+   
+
+  </form>
+</div>

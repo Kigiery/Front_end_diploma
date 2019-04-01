@@ -4,33 +4,25 @@ import {HttpClientModule} from "@angular/common/http"
 import { AppComponent } from './app.component';
 import { Routes,RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
-import { PersonalDataComponent } from './personal-data/personal-data.component';
-import { PassportComponent } from './passport/passport.component';
-import { NostrificationComponent } from './nostrification/nostrification.component';
-import { DocumentComponent } from './document/document.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './features/login/login.component';
+import { LoginModule } from './features/login/login.module';
+import { StudentInfoModule } from './features/student-info/student-info.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
-
-
-const routes:Routes = [
-  { path:"personal-data",component:PersonalDataComponent },
-  { path:"passport",component:PassportComponent },
-  { path:"nostrification",component:NostrificationComponent },
-  { path:"nostrification/add", component:DocumentComponent }
-]
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonalDataComponent,
-    PassportComponent,
-    NostrificationComponent,
-    DocumentComponent
+    LoginComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
-    FormsModule,
+    LoginModule,
+    StudentInfoModule,
+    AppRoutingModule,
 
   ],
   providers: [],
