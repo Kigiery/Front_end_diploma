@@ -4,11 +4,13 @@ import { StudentInfoComponent } from './student-info.component';
 import { PassportComponent } from './passport/passport.component';
 import { NostrificationComponent } from './nostrification/nostrification.component';
 import { DocumentComponent } from './document/document.component';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: StudentInfoComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'passport',
