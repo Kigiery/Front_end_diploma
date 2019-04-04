@@ -9,6 +9,8 @@ import { LoginComponent } from './features/login/login.component';
 import { LoginModule } from './features/login/login.module';
 import { StudentInfoModule } from './features/student-info/student-info.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MenuComponent } from './menu/menu.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppComponent,
     LoginComponent,
     NotFoundComponent,
+    MenuComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
