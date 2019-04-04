@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,11 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   public loginSuccess = undefined;
+
   constructor(
     private authService: AuthService,
     private router: Router,
+    private localStorageService: LocalStorageService,
     formBuilder: FormBuilder
     ) {
       this.loginForm = formBuilder.group({
@@ -23,6 +26,7 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
+    if (this.authService.isLoggedIn) { this.router.navigate(['']); }
   }
 
   public onSubmit(): void {
