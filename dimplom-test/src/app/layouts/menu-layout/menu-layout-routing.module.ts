@@ -17,6 +17,10 @@ const routes: Routes = [
       {
         path: 'studentInfo',
         loadChildren: '../../features/student-info/student-info.module#StudentInfoModule',
+      },
+      {
+        path: 'registration',
+        loadChildren: '../../features/registration/registration.module#RegistrationModule',
       }
     ]
   }

@@ -1,16 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from "@angular/common/http"
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { Routes,RouterModule } from "@angular/router";
-import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './features/login/login.component';
 import { LoginModule } from './features/login/login.module';
-import { StudentInfoModule } from './features/student-info/student-info.module';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { MenuComponent } from './menu/menu.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { MenuLayoutModule } from './layouts/menu-layout/menu-layout.module';
 
 
 @NgModule({
@@ -18,16 +15,14 @@ import { RegistrationComponent } from './registration/registration.component';
     AppComponent,
     LoginComponent,
     NotFoundComponent,
-    MenuComponent,
     RegistrationComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     LoginModule,
-    StudentInfoModule,
+    MenuLayoutModule,
     AppRoutingModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

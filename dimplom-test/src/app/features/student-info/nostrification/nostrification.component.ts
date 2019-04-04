@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class NostrificationComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-  addDocument(){
-    this.router.navigate(["nostrification/add"]);
+  addDocument() {
+    this.router.navigate(['nostrification/add']);
   }
 }

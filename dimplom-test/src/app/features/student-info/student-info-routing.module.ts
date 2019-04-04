@@ -8,9 +8,8 @@ import { AuthGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'studentInfo',
+    path: '',
     component: StudentInfoComponent,
-    canActivate: [AuthGuard],
     children: [
       {
         path: 'passport',
