@@ -10,7 +10,6 @@ const routes: Routes = [
   {
     path: '',
     component: StudentInfoComponent,
-    canActivate: [AuthGuard],
     children: [
       {
         path: 'passport',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-document',
@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
 })
 export class DocumentComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
-  close(){
-    this.router.navigate(['/nostrification']);
+  close() {
+    this.router.navigate(['../'], { relativeTo: this.activatedRoute});
   }
 
 }

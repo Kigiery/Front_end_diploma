@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   /**
-   * 
+   *
    * @param login User credentials (username, password)
    */
   public auth(login: AuthenticateUserInterface): Observable<User> {
