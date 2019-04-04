@@ -3,6 +3,7 @@ import { AuthenticateUserInterface } from '../interfaces/authenticate-user.inter
 import { of, Observable, from } from 'rxjs';
 import { first, map, tap } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
+import { LocalStorageService } from './local-storage.service';
 
 const testUsers: AuthenticateUserInterface[] = [
   {
@@ -19,8 +20,14 @@ const testUsers: AuthenticateUserInterface[] = [
 })
 export class AuthService {
   isLoggedIn = false;
-  constructor() { }
+  constructor(private localStorageService: LocalStorageService) {
+    if (this.localStorageService.userExists()) {this.isLoggedIn = true; }
+  }
 
+  /**
+   * 
+   * @param login User credentials (username, password)
+   */
   public auth(login: AuthenticateUserInterface): Observable<User> {
     return from(testUsers).pipe(
       first(user => user.username === login.username && user.password === login.password),
@@ -28,7 +35,8 @@ export class AuthService {
       map(user => {
 
         return { username: user.username, token: 'test-token'};
-      })
+      }),
+      tap(user => this.localStorageService.setUser(user))
     );
   }
 }
