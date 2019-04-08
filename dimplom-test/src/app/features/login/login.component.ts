@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { User } from 'src/app/interfaces/user.interface';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
-    if (this.authService.isLoggedIn) { this.router.navigate(['']); }
+    if (this.authService.isLoggedIn) { this.router.navigate(['/']); }
   }
 
   public onSubmit(): void {
@@ -34,12 +35,13 @@ export class LoginComponent implements OnInit {
       this.authService.auth({
         username: this.loginForm.controls['username'].value,
         password: this.loginForm.controls['password'].value,
-      }).subscribe({
-        next: user => {
+      }).subscribe((user: User) => {
           this.router.navigate(['/']);
         },
-        error: error => this.loginSuccess = false
-      });
+        error => {
+          this.loginSuccess = false;
+        }
+      );
     }
   }
 
