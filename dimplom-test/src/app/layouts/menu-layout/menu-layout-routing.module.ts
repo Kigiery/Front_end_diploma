@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: MenuLayoutComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -21,6 +21,10 @@ const routes: Routes = [
       {
         path: 'registration',
         loadChildren: '../../features/registration/registration.module#RegistrationModule',
+      },
+      {
+        path: 'search',
+        loadChildren: '../../features/search/search.module#SearchModule'
       }
     ]
   }
