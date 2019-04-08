@@ -10,7 +10,9 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div> -->
-    <h3 *ngIf="loginSuccess === false">Invalid credentials</h3>
+    <div *ngIf="loginSuccess === false" class="alert alert-danger" role="alert">
+      <strong>Error:</strong> Invalid credentials
+    </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
 </div>
