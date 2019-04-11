@@ -1,159 +1,150 @@
-<div class="container-fluid">
-  <!-- <div class="row justify-content-center"> -->
-    <form (ngSubmit)="onSubmit()" #SearchForm="ngForm">
+<div class="container">
+  <form class="form-horizontal" (ngSubmit)="onSubmit()" #SearchForm="ngForm" role="form">
+    <div class="form-group form-inline justify-content-center">
+      <label for="firstname" class="col-sm-2 col-form-label">Прізвище:</label>
+      <div class="col-3">
+        <input class="form-control form-control-sm" type="text" name="firstname" #firstname="ngModel" ngModel required />
+      </div>
 
-          <div class="row">
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="firstname">Прізвище:</label>
-                <input class="form-control" type="text" name="firstname" #firstname="ngModel" ngModel required />
-              </div>
-            </div>
-        
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="department">Факультет: </label>
-                <select class="form-control" name="department" #department="ngModel" ngModel required>
-                  <option>Іноземних мов</option>
-                  <option>Математики та інформатики</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="name">Ім'я:</label>
-                <input class="form-control" id="name" type="text" name="name" ngModel />
-              </div>
-            </div>
-        
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="educprogram">Освітня програма:</label>
-                <select class="form-control" name="educprogram" #educprogram="ngModel" ngModel required>
-                  <option>Іноземних мов</option>
-                  <option>Математики та інформатики</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="dateOfBirth">Дата народження:</label>
-                <input class="form-control" id="dateOfBirth" type="date" name="dateOfBirth" #dateOfBirth="ngModel" ngModel
-                  required>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="program">Програма:</label>
-                <select class="form-control" name="program" #program="ngModel" ngModel required>
-                  <option></option>
-                  <option></option>
-                </select>
-              </div>
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="country">Країна:</label>
-                <select class="form-control" name="country" #country="ngModel" ngModel required>
-                  <option></option>
-                  <option></option>
-                </select>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="level">Рівень:</label>
-                <select class="form-control" name="level" #level="ngModel" ngModel required>
-                  <option>Бакалар</option>
-                  <option>Магистр</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="number">Контракт №:</label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="educform">Форма навчання:</label>
-                <select class="form-control" name="educform" #educform="ngModel" ngModel required>
-                  <option>Заочна</option>
-                  <option>Бюджетна</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="course">Курс:</label>
-                <input class="form-control" type="number" min="1" name="course" #course="ngModel" ngModel required>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="lineArrive">Лінія прибуття:</label>
-                <select class="form-control" name="lineArrive">
-                  <option></option>
-                  <option></option>
-                </select>
-              </div>
-            </div>
-          </div>
-        
-          <div class="row">
-            <div class="col-sm">
-              <div class="form-group">
-                <label for="language">Мова: </label>
-                <select class="form-control" name="language" #language="ngModel" ngModel required>
-                  <option>Украинский</option>
-                  <option>Русский</option>
-                  <option>English</option>
-                </select>
-              </div>
-            </div>
-          </div>
+      <label for="department" class="col-sm-2 col-form-label">Факультет:</label>
+        <div class="col-3">
+          <select class="form-control form-control-sm" name="department" #department="ngModel" ngModel required>
+            <option>Математики и информатики</option>
+            <option></option>
+          </select>
+        </div>
+    </div>
   
+  
+      <div class="form-group form-inline justify-content-center">
+        <label for="name" class="col-sm-2 col-form-label">Ім'я:</label>
+        <div class="col-3">
+          <input class="form-control form-control-sm" id="name" type="text" name="name" ngModel required />
+        </div>
+        <label for="educprogram" class="col-sm-2 col-form-label">Освітня програма:</label>
+        <div class="col-3">
+          <select class="form-control form-control-sm" name="educprogram" #educprogram="ngModel" ngModel required>
+            <option>Информатика</option>
+            <option></option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group form-inline justify-content-center">
+          <label for="dateOfBirth" class="col-sm-2 col-form-label" >Дата народження:</label>
+          <div class="col-3">
+            <input class="form-control form-control-sm" id="dateOfBirth" type="date" name="dateOfBirth" #dateOfBirth="ngModel" ngModel required>
+          </div>
+          <label for="program" class="col-sm-2 col-form-label">Програма:</label>
+          <div class="col-3">  
+            <select class="form-control form-control-sm" name="program" #program="ngModel" ngModel required>
+              <option></option>
+              <option></option>
+            </select>
+        </div>
+      </div>
         
-        <!-- <div class="col-sm">
+        
+      
+  
+      <div class = "form-group form-inline justify-content-center">
+        <label for="nationality" class="col-sm-2 col-form-label">Національність:</label>
+        <div class="col-3">
+            <select class="form-control form-control-sm" name="nationality" #nationality="ngModel" ngModel required>
+              <option></option>
+              <option></option>
+            </select>
+          </div>
+        
+  
+        <label for="level" class="col-sm-2 col-form-label">Рівень:</label>
+        <div class="col-3">
+          
+            <select class="form-control form-control-sm" name="level" #level="ngModel" ngModel required>
+              <option>Бакалар</option>
+              <option>Магистр</option>
+            </select>
+        
+        </div>
+      </div>
+  
+      <div class="form-group form-inline justify-content-center">
+        <label for="country" class="col-sm-2 col-form-label">Країна:</label>
+        <div class="col-3">
+            <select class="form-control form-control-sm" name="country" #country="ngModel" ngModel required>
+              <option></option>
+              <option></option>
+            </select>
+        </div>
+
+        <label for="educform" class="col-sm-2 col-form-label">Форма навчання:</label>
+        <div class="col-3">
+          <select class="form-control form-control-sm" name="educform" #educform="ngModel" ngModel required>
+            <option>Заочна</option>
+            <option>Бюджетна</option>
+          </select>
+        </div>
+        
+      </div>
+  
+      <div class="form-group form-inline justify-content-center">
+        <label for="number" class="col-sm-2 col-form-label">Контракт №:</label>
+        <div class="col-3">
+      
+          <input class="form-control form-control-sm" type="text">
+          
+        </div>
+  
+        <label for="lineArrive" class="col-sm-2 col-form-label">Лінія прибуття:</label>
+        <div class="col-3">
+            <select class="form-control form-control-sm" name="lineArrive">
+              <option></option>
+              <option></option>
+            </select>
+        </div>
+      </div>
+  
+      <div class="form-group form-inline justify-content-center">
+        <label for="course" class="col-sm-2 col-form-label">Курс:</label>
+        <div class="col-3">
+          <input class="form-control form-control-sm" type="number" min="1" name="course" #course="ngModel" ngModel required>
+        </div>
+  
+        <label for="language" class="col-sm-2 col-form-label">Мова: </label>
+        <div class="col-3">
+            <select class="form-control form-control-sm" name="language" #language="ngModel" ngModel required>
+              <option>Украинский</option>
+              <option>Русский</option>
+              <option>English</option>
+            </select>
+        </div>
+      </div>
+    
+      <div class="row justify-content-end">
+        <div class="col-auto">
           <button class="btn btn-success" type="submit">Знайти</button>
-        </div> -->
+        </div>
+      </div>
   
-    </form>
+  </form>
 
-  <!-- </div> -->
 
   <div class="row">
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th scope="col">№</th>
-          <th scope="col">П.І.Б</th>
-          <th scope="col">Контракт</th>
-          <th scope="col">Країна</th>
-          <th scope="col">Курс</th>
-          <th scope="col">Форма навчання</th>
-          <th scope="col">Факультет</th>
-          <th scope="col">Освіт.програма</th>
-          <th scope="col">Рівень</th>
+          <th scope="col-sm">№</th>
+          <th scope="col-sm">П.І.Б</th>
+          <th scope="col-sm">Контракт</th>
+          <th scope="col-sm">Країна</th>
+          <th scope="col-sm">Курс</th>
+          <th scope="col-sm">Форма навчання</th>
+          <th scope="col-sm">Факультет</th>
+          <th scope="col-sm">Освіт.програма</th>
+          <th scope="col-sm">Рівень</th>
         </tr>
       </thead>
     </table>
   </div>
-  
+
 </div>
