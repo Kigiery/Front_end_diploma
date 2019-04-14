@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: MenuLayoutComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
