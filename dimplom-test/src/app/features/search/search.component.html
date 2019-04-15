@@ -1,5 +1,7 @@
-<div class="container">
+<div class="container-fluid">
   <form [formGroup]="searchForm" class="form-horizontal" (ngSubmit)="onSubmit()" role="form">
+
+
     <div class="form-group form-inline justify-content-center">
       <label for="firstname" class="col-sm-2 col-form-label">Прізвище:</label>
       <div class="col-3">
@@ -8,7 +10,7 @@
 
       <label for="department" class="col-sm-2 col-form-label">Факультет:</label>
         <div class="col-3">
-          <select formControlName="faculty" class="form-control form-control-sm" name="department">
+          <select (change)="onFacultySelected()" formControlName="faculty" class="form-control form-control-sm col-8" name="department">
             <option [ngValue]="null">Будь який</option>
             <option *ngFor="let faculty of faculties$ | async" [ngValue]="faculty">{{faculty.facultyName}}</option>
           </select>
@@ -23,12 +25,13 @@
         </div>
         <label for="educprogram" class="col-sm-2 col-form-label">Освітня програма:</label>
         <div class="col-3">
-          <select class="form-control form-control-sm" name="educprogram" required>
-            <option>Информатика</option>
-            <option></option>
+          <select formControlName="direction" class="form-control form-control-sm col-8" name="educprogram" required>
+            <option [ngValue]="null">Будь яка</option>
+            <option *ngFor="let item of directions$ | async" [ngValue]="item">{{item.directionName}}</option>
           </select>
         </div>
       </div>
+
 
       <div class="form-group form-inline justify-content-center">
           <label for="dateOfBirth" class="col-sm-2 col-form-label" >Дата народження:</label>
@@ -37,15 +40,13 @@
           </div>
           <label for="program" class="col-sm-2 col-form-label">Програма:</label>
           <div class="col-3">  
-            <select class="form-control form-control-sm" name="program">
-              <option></option>
-              <option></option>
+            <select formControlName="educationProgram" class="form-control form-control-sm" name="program">
+              <option [ngValue]="null">Будь яка</option>
+              <option *ngFor="let item of educationPrograms$ | async" [ngValue]="item">{{item.educProgName}}</option>
             </select>
         </div>
       </div>
         
-        
-      
   
       <div class = "form-group form-inline justify-content-center">
         <label for="nationality" class="col-sm-2 col-form-label">Національність:</label>
@@ -55,77 +56,71 @@
               <option></option>
             </select>
           </div>
-        
-  
         <label for="level" class="col-sm-2 col-form-label">Рівень:</label>
         <div class="col-3">
-          
-            <select class="form-control form-control-sm" name="level">
-              <option>Бакалар</option>
-              <option>Магистр</option>
+            <select formControlName="educationLevel" class="form-control form-control-sm" name="level">
+              <option [ngValue]="null">Будь який</option>
+              <option *ngFor="let item of educationLevels$ | async" [ngValue]="item">{{item.educLevelName}}</option>
             </select>
-        
         </div>
       </div>
   
+
       <div class="form-group form-inline justify-content-center">
         <label for="country" class="col-sm-2 col-form-label">Країна:</label>
         <div class="col-3">
-            <select class="form-control form-control-sm" name="country">
-              <option></option>
-              <option></option>
+            <select formControlName="country" class="form-control form-control-sm" name="country">
+              <option [ngValue]="null">Будь яка</option>
+              <option *ngFor="let item of countries$ | async" [ngValue]="item">{{item.countryNameUa}}</option>
             </select>
         </div>
-
         <label for="educform" class="col-sm-2 col-form-label">Форма навчання:</label>
         <div class="col-3">
-          <select class="form-control form-control-sm" name="educform">
-            <option>Заочна</option>
-            <option>Бюджетна</option>
+          <select formControlName="educationForm" class="form-control form-control-sm" name="educform">
+              <option [ngValue]="null">Будь яка</option>
+              <option *ngFor="let item of educationForms$ | async" [ngValue]="item">{{item.educFormName}}</option>
           </select>
         </div>
-        
       </div>
   
+
       <div class="form-group form-inline justify-content-center">
         <label for="number" class="col-sm-2 col-form-label">Контракт №:</label>
         <div class="col-3">
-      
-          <input class="form-control form-control-sm" type="text">
-          
+          <input formControlName="contractNumber" class="form-control form-control-sm" type="text">
         </div>
-  
         <label for="lineArrive" class="col-sm-2 col-form-label">Лінія прибуття:</label>
         <div class="col-3">
-            <select class="form-control form-control-sm" name="lineArrive">
-              <option></option>
-              <option></option>
+            <select formControlName="arrivalLine" class="form-control form-control-sm" name="lineArrive">
+                <option [ngValue]="null">Будь яка</option>
+                <option *ngFor="let item of arrivalLines$ | async" [ngValue]="item">{{item.arrivalCenterName}}</option>
             </select>
         </div>
       </div>
   
+
       <div class="form-group form-inline justify-content-center">
         <label for="course" class="col-sm-2 col-form-label">Курс:</label>
         <div class="col-3">
-          <input class="form-control form-control-sm" type="number" min="1" name="course">
+          <input formControlName="course" class="form-control form-control-sm" type="number" min="1" name="course">
         </div>
-  
         <label for="language" class="col-sm-2 col-form-label">Мова: </label>
         <div class="col-3">
-            <select class="form-control form-control-sm" name="language">
-              <option>Украинский</option>
-              <option>Русский</option>
-              <option>English</option>
+            <select formControlName="educationLanguage" class="form-control form-control-sm" name="language">
+                <option [ngValue]="null">Будь яка</option>
+                <option *ngFor="let item of educationLanguage$ | async" [ngValue]="item">{{item.educLanguageName}}</option>
             </select>
         </div>
       </div>
     
+
       <div class="row justify-content-end">
         <div class="col-auto">
           <button class="btn btn-success" type="submit">Знайти</button>
         </div>
       </div>
-  
+
+
   </form>
 
 
