@@ -10,12 +10,15 @@ import { RegistrationComponent } from './registration/registration.component';
 import { MenuLayoutModule } from './layouts/menu-layout/menu-layout.module';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NotFoundComponent,
     RegistrationComponent,
+  
   ],
   imports: [
     BrowserModule,
