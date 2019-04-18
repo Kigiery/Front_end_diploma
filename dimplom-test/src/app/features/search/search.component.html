@@ -36,11 +36,11 @@
       <div class="form-group form-inline justify-content-center">
           <label for="dateOfBirth" class="col-sm-2 col-form-label" >Дата народження:</label>
           <div class="col-3">
-            <input formControlName="dataOfBirth" class="form-control form-control-sm" id="dateOfBirth" type="date" name="dateOfBirth">
+            <input formControlName="dataOfBirth" class="form-control form-control-sm col-8" id="dateOfBirth" type="date" name="dateOfBirth">
           </div>
           <label for="program" class="col-sm-2 col-form-label">Програма:</label>
           <div class="col-3">  
-            <select formControlName="educationProgram" class="form-control form-control-sm" name="program">
+            <select formControlName="educationProgram" class=" col-8 form-control form-control-sm" name="program">
               <option [ngValue]="null">Будь яка</option>
               <option *ngFor="let item of educationPrograms$ | async" [ngValue]="item">{{item.educProgName}}</option>
             </select>
@@ -58,7 +58,7 @@
           </div>
         <label for="level" class="col-sm-2 col-form-label">Рівень:</label>
         <div class="col-3">
-            <select formControlName="educationLevel" class="form-control form-control-sm" name="level">
+            <select formControlName="educationLevel" class="form-control form-control-sm col-8" name="level">
               <option [ngValue]="null">Будь який</option>
               <option *ngFor="let item of educationLevels$ | async" [ngValue]="item">{{item.educLevelName}}</option>
             </select>
@@ -68,15 +68,15 @@
 
       <div class="form-group form-inline justify-content-center">
         <label for="country" class="col-sm-2 col-form-label">Країна:</label>
-        <div class="col-3">
-            <select formControlName="country" class="form-control form-control-sm" name="country">
+        <div class = "col-3">
+            <select formControlName="country" class="form-control form-control-sm col-8" name="country">
               <option [ngValue]="null">Будь яка</option>
               <option *ngFor="let item of countries$ | async" [ngValue]="item">{{item.countryNameUa}}</option>
             </select>
         </div>
         <label for="educform" class="col-sm-2 col-form-label">Форма навчання:</label>
         <div class="col-3">
-          <select formControlName="educationForm" class="form-control form-control-sm" name="educform">
+          <select formControlName="educationForm" class="form-control form-control-sm col-8" name="educform">
               <option [ngValue]="null">Будь яка</option>
               <option *ngFor="let item of educationForms$ | async" [ngValue]="item">{{item.educFormName}}</option>
           </select>
@@ -91,7 +91,7 @@
         </div>
         <label for="lineArrive" class="col-sm-2 col-form-label">Лінія прибуття:</label>
         <div class="col-3">
-            <select formControlName="arrivalLine" class="form-control form-control-sm" name="lineArrive">
+            <select formControlName="arrivalLine" class="form-control form-control-sm col-8" name="lineArrive">
                 <option [ngValue]="null">Будь яка</option>
                 <option *ngFor="let item of arrivalLines$ | async" [ngValue]="item">{{item.arrivalCenterName}}</option>
             </select>
@@ -102,11 +102,12 @@
       <div class="form-group form-inline justify-content-center">
         <label for="course" class="col-sm-2 col-form-label">Курс:</label>
         <div class="col-3">
-          <input formControlName="course" class="form-control form-control-sm" type="number" min="1" name="course">
+          <input formControlName="course" class="form-control form-control-sm col-8" type="number" min="1" name="course">
         </div>
+
         <label for="language" class="col-sm-2 col-form-label">Мова: </label>
         <div class="col-3">
-            <select formControlName="educationLanguage" class="form-control form-control-sm" name="language">
+            <select formControlName="educationLanguage" class="form-control form-control-sm col-8" name="language">
                 <option [ngValue]="null">Будь яка</option>
                 <option *ngFor="let item of educationLanguage$ | async" [ngValue]="item">{{item.educLanguageName}}</option>
             </select>
@@ -114,7 +115,7 @@
       </div>
     
 
-      <div class="row justify-content-end">
+      <div class="row justify-content-center">
         <div class="col-auto">
           <button class="btn btn-success" type="submit">Знайти</button>
         </div>
