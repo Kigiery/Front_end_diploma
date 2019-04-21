@@ -11,7 +11,7 @@ export class StudentSearchService {
 
   constructor(private http: HttpService) { }
 
-  public search(searchParams: SearchStudentInterface): Observable<SearchStudentResultInterface> {
+  public search(searchParams: SearchStudentInterface): Observable<SearchStudentResultInterface[]> {
     return this.http.post('search', {
       ...searchParams,
       // nationality: 'FOREIGN',

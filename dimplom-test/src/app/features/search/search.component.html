@@ -138,6 +138,7 @@
           <th scope="col-sm">Факультет</th>
           <th scope="col-sm">Освіт.програма</th>
           <th scope="col-sm">Рівень</th>
+          <th scope="col-sm"></th>
         </tr>
       </thead>
       <tbody>
@@ -151,6 +152,9 @@
           <td>{{item.faculty.facultyName}}</td>
           <td>{{item.contract.direction.directionName}}</td>
           <td>{{item.educationLevel.educLevelName}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="selectStudent(item)">Вибрати</button>
+          </td>
         </tr>
       </tbody>
     </table>

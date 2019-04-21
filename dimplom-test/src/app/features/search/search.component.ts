@@ -14,6 +14,8 @@ import { CountryInterface } from 'src/app/interfaces/models/country.interface';
 import { EducationLanguageInterface } from 'src/app/interfaces/models/education-language.interface';
 import { EducationFormInterface } from 'src/app/interfaces/models/education-form.interface';
 import { ArrivalLineInterface } from 'src/app/interfaces/models/arrival-line.interface';
+import { StudentService } from 'src/app/services/student/student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -30,7 +32,7 @@ export class SearchComponent implements OnInit {
   public arrivalLines$: Observable<ArrivalLineInterface[]>;
   public directions$: Observable<DirectionInterface[]>;
   public countries$: Observable<CountryInterface[]>;
-  public searchResult$: Observable<SearchStudentResultInterface>;
+  public searchResult$: Observable<SearchStudentResultInterface[]>;
   public searchForm: FormGroup;
 
   constructor(
@@ -38,6 +40,8 @@ export class SearchComponent implements OnInit {
       private entities: EntityCrudService,
       private searchService: StudentSearchService,
       private fb: FormBuilder,
+      private studentService: StudentService,
+      private router: Router,
     ) {
       this.searchForm = this.fb.group({
         name: [''],
@@ -85,6 +89,12 @@ export class SearchComponent implements OnInit {
     }
 
     this.searchForm.get('direction').setValue(null);
+  }
+
+  public selectStudent(value: SearchStudentResultInterface): void {
+    this.studentService.currentStudent = value;
+
+    this.router.navigate(['/studentInfo']);
   }
 
 }
